@@ -76,7 +76,8 @@ L'application propose :
 ## Architecture du projet
 
 
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a9e16348-6b08-46e8-90d3-83b4d628f9f9" />
+<img width="1200" height="900" alt="architecture_projectflow_clean" src="https://github.com/user-attachments/assets/a89c0c56-1efa-477b-b0c5-f8c777ac591b" />
+
 
 
 ```
