@@ -339,6 +339,8 @@ GET    /api/reporting/phases/facturees-non-payees
 GET    /api/reporting/projets/en-cours
 GET    /api/reporting/projets/clotures
 ```
+![WhatsApp Image 2026-04-10 at 5 42 57 PM](https://github.com/user-attachments/assets/8dbc0278-374e-4ffb-ab27-2df2dd493d73)
+![WhatsApp Image 2026-04-10 at 5 48 58 PM](https://github.com/user-attachments/assets/ad0a29b1-a310-4439-8eae-a833e162811d)
 
 ---
 
