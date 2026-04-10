@@ -1,0 +1,40 @@
+/* Compteur de notifications ou badges */
+.counter {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 2px;
+  color: #ffffff;
+  background: #e47911; /* Orange vif */
+  border: none;
+  margin-bottom: 24px; [cite: 1]
+}
+
+#center {
+  display: flex; [cite: 9]
+  flex-direction: column; [cite: 9]
+  background-color: var(--bg-primary);
+  padding: 20px; [cite: 10]
+}
+
+/* Liens de navigation bas de page */
+#next-steps ul a {
+  color: var(--link-color); [cite: 18]
+  font-size: 14px; [cite: 18]
+  border-radius: 4px; [cite: 18]
+  background: white; [cite: 18]
+  border: 1px solid #d5d9d9;
+  display: flex; [cite: 18]
+  padding: 8px 12px; [cite: 18]
+  text-decoration: none; [cite: 19]
+}
+
+#next-steps ul a:hover {
+  text-decoration: underline;
+  background-color: #f7fafa;
+}
+
+/* Séparateurs Amazon */
+#spacer, .ticks {
+  border-top: 1px solid #e7e7e7; [cite: 24]
+}
