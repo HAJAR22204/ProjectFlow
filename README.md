@@ -75,6 +75,10 @@ L'application propose :
 
 ## Architecture du projet
 
+
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/a9e16348-6b08-46e8-90d3-83b4d628f9f9" />
+
+
 ```
 ProjetFlow/
 ├── src/                                  # Backend Spring Boot
