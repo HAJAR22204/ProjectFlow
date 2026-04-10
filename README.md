@@ -282,7 +282,9 @@ L'accès aux modules est restreint selon le profil de l'utilisateur connecté. L
 ## API REST — Documentation Swagger
 
 La documentation interactive de l'API est disponible après démarrage du backend :
+Après avoir démarré le backend, vous pouvez consulter et interagir avec la documentation complète à l'adresse suivante :
 
+👉 http://localhost:8081/swagger-ui/index.html
 ```
 http://localhost:8081/swagger-ui.html
 ```
