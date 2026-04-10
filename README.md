@@ -378,8 +378,6 @@ La démonstration couvrira :
 - Création d'un organisme, d'un projet et de ses phases
 - Affectation d'employés et suivi des livrables
 - Gestion de la facturation et consultation du reporting
-- Tests des endpoints via Swagger UI
-
 ---
 
 
