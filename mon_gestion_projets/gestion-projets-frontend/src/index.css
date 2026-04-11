@@ -80,3 +80,49 @@ input:focus {
   box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
   outline: none;
 }
+/* ===== CORPORATE BLUE: Fix textes blancs/clairs sur fond clair ===== */
+
+/* Titres de modales et sections */
+.glass-panel h2, .glass-panel h3,
+main h1, main h2, main h3 {
+  color: var(--text-primary);
+}
+
+/* Tous les paragraphes dans le contenu principal */
+main p, main span:not(.badge *) {
+  color: inherit;
+}
+
+/* Fix inputs avec classes Tailwind dark héritées */
+input.text-white, textarea.text-white, select.text-white {
+  color: var(--text-primary) !important;
+  background: #f8fafc !important;
+}
+
+/* Fix fonds sombres dans les formulaires */
+.\[bg-black\/20\], [class*="bg-black"] {
+  background: #f8fafc !important;
+}
+
+/* Scrollbar dans modales */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+/* Fix outline inputs focus */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+  background: #ffffff;
+}
+
+/* Titres de pages */
+main .text-white {
+  color: var(--text-primary) !important;
+}
+
+/* Fix text-gray-300 labels */
+.text-gray-300 {
+  color: #b0b1b2 !important;
+}
