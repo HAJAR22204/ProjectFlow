@@ -49,12 +49,12 @@ function App() {
               </Route>
 
               {/* PHASES : Opérationnel et Consultation */}
-              <Route element={<PrivateRoute allowedRoles={['ADMINISTRATEUR', 'ADMIN', 'DIRECTEUR', 'CHEF_PROJET', 'INGENIEUR', 'TECHNICIEN', 'COMPTABLE']} />}>
+              <Route element={<PrivateRoute allowedRoles={['ALL']} />}>
                 <Route path="/phases" element={<Phases />} />
               </Route>
 
               {/* OPÉRATIONNEL AUTRE : Livrables, Affectations, Documents */}
-              <Route element={<PrivateRoute allowedRoles={['ADMINISTRATEUR', 'ADMIN', 'DIRECTEUR', 'CHEF_PROJET', 'INGENIEUR', 'TECHNICIEN']} />}>
+              <Route element={<PrivateRoute allowedRoles={['ALL']} />}>
                 <Route path="/affectations" element={<Affectations />} />
                 <Route path="/livrables" element={<Livrables />} />
                 <Route path="/documents" element={<Documents />} />
