@@ -219,15 +219,15 @@ Si vous lancez l'application depuis votre IDE (IntelliJ, Eclipse) :
 | Login | Mot de passe | Rôle |
 |-------|-------------|------|
 | `admin` | `admin123` | Administrateur — accès complet |
-| `melfassi` | `admin123` | Directeur |
-| `sbenhaddou` | `admin123` | Secrétaire |
-| `rouali` | `admin123` | Chef de Projet |
-| `lamrani` | `admin123` | Chef de Projet |
-| `hcherkaoui` | `admin123` | Comptable |
+| `melfassi` | `fassi123` | Directeur |
+| `sbenhaddou` | `haddou123` | Secrétaire |
+| `rouali` | `rachid123` | Chef de Projet |
+| `lamrani` | `lamrani123` | Chef de Projet |
+| `hcherkaoui` | `cherk123` | Comptable |
 | `ibenali` | `admin123` | Ingénieur |
-| `ytahiri` | `admin123` | Ingénieur |
-| `amoukhliss` | `admin123` | Technicien |
-| `kziani` | `admin123` | Employé |
+| `ytahiri` | `tahiri123` | Ingénieur |
+| `amoukhliss` | `amoukh123` | Technicien |
+| `kziani` | `ziani123` | Employé |
 
 ---
 
