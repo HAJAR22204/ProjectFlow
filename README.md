@@ -226,24 +226,16 @@ Au premier démarrage du backend, le `DataInitializer` crée automatiquement :
 - Tous les profils (ADMINISTRATEUR, DIRECTEUR, CHEF_PROJET, COMPTABLE, SECRETAIRE, INGENIEUR, TECHNICIEN, EMPLOYE)
 - Le compte administrateur par défaut
 
-### Initialisation manuelle (sans Maven)
+### Les tableaux cree dans la base
 
 Si vous lancez l'application depuis votre IDE (IntelliJ, Eclipse) :
 
-1. Exécuter `init_database.sql` dans MySQL pour créer la structure
-2. Exécuter `donnees_test.sql` pour insérer des données de démonstration
-3. Lancer `GestionprojetsApplication.java` via le bouton Run de votre IDE
+<img width="1170" height="539" alt="image" src="https://github.com/user-attachments/assets/249d0469-a7d6-47d7-b8a2-36a4b650c377" />
 
-### Schéma des entités principales
 
-```
-profils ──< employes >──────< affectations >──── phases >──── livrables
-                                                    │              │
-organismes ──< projets >──< phases                  └── factures
-                  │
-                  └──< documents_projet
-                  └──< commentaires
-```
+### Schéma 
+
+<img width="1407" height="862" alt="image" src="https://github.com/user-attachments/assets/c2977df4-c4fb-4bc4-8427-f0a3be0ce0b4" />
 
 ---
 
