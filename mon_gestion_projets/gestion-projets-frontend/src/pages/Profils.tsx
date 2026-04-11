@@ -143,10 +143,20 @@ const Profils: React.FC = () => {
       </motion.div>
     </div>
   );
+const descriptions = {
+  'ADMINISTRATEUR': 'Accès complet au système. Gère les comptes utilisateurs, les profils et toutes les ressources de l\'application.',
+  'DIRECTEUR':      'Supervise l\'ensemble des projets et des équipes. Accès aux tableaux de bord, reporting et pilotage global.',
+  'SECRETAIRE':     'Gère les organismes clients et les informations administratives des projets. Création et mise à jour des dossiers projets.',
+  'CHEF_PROJET':    'Responsable opérationnel des projets. Gère les phases, affecte les employés, suit les livrables et documents.',
+  'COMPTABLE':      'Gère la facturation et le suivi financier. Consulte les phases terminées, facturées et payées.',
+  'TECHNICIEN':     'Intervient sur les phases des projets en tant que membre de l\'équipe technique.',
+  'INGENIEUR':      'Expert technique affecté aux phases de développement et d\'études des projets.',
+  'EMPLOYE':        'Utilisateur standard avec accès limité aux informations le concernant directement.',
+};
+
 
   return (
     <div className="space-y-6">
-      {/* Header Amazon Style */}
       <div className="flex justify-between items-center bg-white p-4 border border-[#d5d9d9] rounded-lg shadow-sm">
         <div>
           <h1 className="text-2xl font-bold text-[#0f1111] flex items-center gap-2">
@@ -173,7 +183,7 @@ const Profils: React.FC = () => {
         />
       </div>
 
-      {/* Liste des Profils sous forme de cartes (Amazon Grid) */}
+      {/* Liste des Profils sous forme de cartes  */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {isLoading ? (
           <div className="col-span-full py-20 text-center text-[#565959]">Chargement...</div>
@@ -204,7 +214,7 @@ const Profils: React.FC = () => {
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-[#565959] line-clamp-2 min-h-[40px]">
-                  {profil.description || "Aucune description fournie pour ce rôle."}
+                  {descriptions[profil.code as keyof typeof descriptions] || 'Aucune description fournie pour ce rôle.'}
                 </p>
               </div>
             </motion.div>
