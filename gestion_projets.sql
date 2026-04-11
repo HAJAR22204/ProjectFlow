@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 10, 2026 at 05:10 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Hôte : 127.0.0.1
+-- Généré le : sam. 11 avr. 2026 à 15:09
+-- Version du serveur : 10.4.32-MariaDB
+-- Version de PHP : 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gestion_projets`
+-- Base de données : `gestion_projets`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `affectations`
+-- Structure de la table `affectations`
 --
 
 CREATE TABLE `affectations` (
@@ -38,7 +38,7 @@ CREATE TABLE `affectations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `affectations`
+-- Déchargement des données de la table `affectations`
 --
 
 INSERT INTO `affectations` (`date_debut`, `date_fin`, `description`, `role`, `statut`, `employe_id`, `phase_id`) VALUES
@@ -54,12 +54,13 @@ INSERT INTO `affectations` (`date_debut`, `date_fin`, `description`, `role`, `st
 ('2024-03-01', '2024-04-15', 'Analyse des besoins médicaux', 'Analyste', 'TERMINE', 12, 6),
 ('2024-07-01', '2024-09-30', 'Installation équipements actifs', 'Technicien Réseau', 'EN_COURS', 12, 16),
 ('2024-06-01', '2024-08-31', 'Intégration et tests UI', 'Intégrateur', 'EN_COURS', 13, 4),
-('2024-09-01', '2024-12-31', 'Déploiement axe Rabat-Salé', 'Technicien', 'EN_COURS', 13, 17);
+('2024-09-01', '2024-12-31', 'Déploiement axe Rabat-Salé', 'Technicien', 'EN_COURS', 13, 17),
+('2024-03-01', '2024-04-30', NULL, 'developpeur', NULL, 15, 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commentaires`
+-- Structure de la table `commentaires`
 --
 
 CREATE TABLE `commentaires` (
@@ -72,7 +73,7 @@ CREATE TABLE `commentaires` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `commentaires`
+-- Déchargement des données de la table `commentaires`
 --
 
 INSERT INTO `commentaires` (`id`, `contenu`, `date_creation`, `auteur_id`, `phase_id`, `projet_id`) VALUES
@@ -86,7 +87,7 @@ INSERT INTO `commentaires` (`id`, `contenu`, `date_creation`, `auteur_id`, `phas
 -- --------------------------------------------------------
 
 --
--- Table structure for table `documents_projet`
+-- Structure de la table `documents_projet`
 --
 
 CREATE TABLE `documents_projet` (
@@ -101,7 +102,7 @@ CREATE TABLE `documents_projet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `documents_projet`
+-- Déchargement des données de la table `documents_projet`
 --
 
 INSERT INTO `documents_projet` (`id`, `chemin`, `code`, `date_ajout`, `description`, `libelle`, `type_document`, `projet_id`) VALUES
@@ -119,7 +120,7 @@ INSERT INTO `documents_projet` (`id`, `chemin`, `code`, `date_ajout`, `descripti
 -- --------------------------------------------------------
 
 --
--- Table structure for table `employe`
+-- Structure de la table `employe`
 --
 
 CREATE TABLE `employe` (
@@ -130,7 +131,7 @@ CREATE TABLE `employe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `employe`
+-- Déchargement des données de la table `employe`
 --
 
 INSERT INTO `employe` (`id`, `nom`, `prenom`, `telephone`) VALUES
@@ -139,7 +140,7 @@ INSERT INTO `employe` (`id`, `nom`, `prenom`, `telephone`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `employes`
+-- Structure de la table `employes`
 --
 
 CREATE TABLE `employes` (
@@ -157,26 +158,27 @@ CREATE TABLE `employes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `employes`
+-- Déchargement des données de la table `employes`
 --
 
 INSERT INTO `employes` (`id`, `actif`, `adresse`, `email`, `login`, `matricule`, `nom`, `password`, `prenom`, `telephone`, `profil_id`) VALUES
 (1, b'1', NULL, 'admin@gestionprojets.ma', 'admin', 'ADM001', 'Admin', '$2a$10$Y0nuCSDbyuqRNTT/MiTgWusQBaj7AZ4klzNr49Vg14KZh2MSyqWsi', 'Système', NULL, 1),
-(4, b'1', NULL, 'm.elfassi@projetflow.ma', 'melfassi', 'DIR001', 'El Fassi', '$2a$10$JFtxaSWdkrQW0nA0F1jly.JDz0qP7Iaj36v9hB1ORhg9MIFBRWg/.', 'Mohammed', '0661234501', 2),
-(5, b'1', NULL, 's.benhaddou@projetflow.ma', 'sbenhaddou', 'SEC001', 'Benhaddou', '$2a$10$vGTgtF8dIno4MQpoJoVQ3evMvBHFdBwFp3gY1CKfV.RMX94qnn9/S', 'Sanae', '0661234502', 3),
-(6, b'1', NULL, 'r.ouali@projetflow.ma', 'rouali', 'CP001', 'Ouali', '$2a$10$KW.7CARMUG1WhvPyivuuwewQgNp1egqa9.W6007xOY0qUpZlHFtYG', 'Rachid', '0661234503', 4),
-(7, b'1', NULL, 'l.amrani@projetflow.ma', 'lamrani', 'CP002', 'Amrani', '$2a$10$9IlVhMDzUbNG65jVbaq0Jeo92GGBh90vyPGaMHGb.O2ElpYxVSdy2', 'Leila', '0661234504', 4),
-(8, b'1', NULL, 'h.cherkaoui@projetflow.ma', 'hcherkaoui', 'COM001', 'Cherkaoui', '$2a$10$ZKtejdB9vGbcOMqptkVJaOLp9CEqnWko7qK6s9rNvFc.6/sDMjIPe', 'Hassan', '0661234505', 5),
-(9, b'1', NULL, 'i.benali@projetflow.ma', 'ibenali', 'ING001', 'Benali', '$2a$10$pD0.YhsI20yY6FMWqm6uNuK6I1.xcA802YPPIm8/UXFvKGZ2UjBEW', 'Imane', '0661234506', 7),
-(10, b'1', NULL, 'y.tahiri@projetflow.ma', 'ytahiri', 'ING002', 'Tahiri', '$2a$10$mfiX3iRelWb1MZcjnFMWge2hIVR4u5br7zfY1ZG6b2QVOifIQ3tWG', 'Yassine', '0661234507', 7),
-(11, b'1', NULL, 'a.moukhliss@projetflow.ma', 'amoukhliss', 'TEC001', 'Moukhliss', '$2a$10$z3I8wrohvEhDjQCH45n1tOi6ezp2l.vptPdOLyV15JhU6YgEhLFcu', 'Amine', '0661234508', 6),
-(12, b'1', 'Oujda', 'd.sabri@projetflow.ma', 'dsabri', 'TEC002', 'Sabri', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Dounia', '0661234509', 6),
-(13, b'1', NULL, 'k.ziani@projetflow.ma', 'kziani', 'EMP001', 'Ziani', '$2a$10$sL0ZdBH26yJipxZkn1HHs.zHRCUunjZbcrwInlgEPa1KFkbXkfJu6', 'Khalid', '0661234510', 8);
+(4, b'1', NULL, 'm.elfassi@projetflow.ma', 'melfassi', 'DIR001', 'El Fassi', '$2a$10$c1XAr1XjFVTqX05y1PhdF.Ae2IAhMI2AfAs4FjXBD2Kc89ACI/WbG', 'Mohammed', '0661234501', 2),
+(5, b'1', NULL, 's.benhaddou@projetflow.ma', 'sbenhaddou', 'SEC001', 'Benhaddou', '$2a$10$1CU1qBWmMWvgkbt393Cu4Od0eLuspNck4JWuSjyqY5Ws0RVqw1A9G', 'Sanae', '0661234502', 3),
+(6, b'1', NULL, 'r.ouali@projetflow.ma', 'rouali', 'CP001', 'Ouali', '$2a$10$TtVJmE1LvedwR5TsHzEFG.F4LdsnYvX7WgDXQSvhPMV/afJB7yLdC', 'Rachid', '0661234503', 4),
+(7, b'1', 'Marrakech', 'l.amrani@projetflow.ma', 'lamrani', 'CP002', 'Amrani', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Leila', '0661234504', 4),
+(8, b'1', NULL, 'h.cherkaoui@projetflow.ma', 'hcherkaoui', 'COM001', 'Cherkaoui', '$2a$10$NeeZNQODHQ5IYAp13cIi/.z2JPogil7sBXv/H7X.n49Ah8pJM6fMK', 'Hassan', '0661234505', 5),
+(9, b'1', 'Casablanca', 'i.benali@projetflow.ma', 'ibenali', 'ING001', 'Benali', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Imane', '0661234506', 7),
+(10, b'1', NULL, 'y.tahiri@projetflow.ma', 'tahiri', 'ING002', 'Tahiri', '$2a$10$OXGJs6JhLMSF.wPMXUsnD.QzoGSOT5EKLTz4rNENNOxL9rZ.c5BLS', 'Yassine', '0661234507', 7),
+(11, b'1', 'Tanger', 'a.moukhliss@projetflow.ma', 'amoukhliss', 'TEC001', 'Moukhliss', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Amine', '0661234508', 6),
+(12, b'1', NULL, 'd.sabri@projetflow.ma', 'dsabri', 'TEC002', 'Sabri', '$2a$10$uCfRRbLOEcBHzT/dx9sCfOlLw6ybFtegF5mW0siZ.gjt.hYlQE8xW', 'Dounia', '0661234509', 6),
+(13, b'1', NULL, 'k.ziani@projetflow.ma', 'kziani', 'EMP001', 'Ziani', '$2a$10$pYDcYwReWseckQX6nLfjIuLvpbeFamWJZIghhGM3nWgTh663YhRti', 'Khalid', '0661234510', 8),
+(15, b'1', NULL, 'test@test.com', 'hajar', 'EMP002', 'zegour', '$2a$10$nAKLcopFocIbL3nwmfe1zuMOajVMDf9Gfvu0/iFgd7QwrrjnhskVS', 'hajar', '0600000000', 8);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `employetache`
+-- Structure de la table `employetache`
 --
 
 CREATE TABLE `employetache` (
@@ -187,7 +189,7 @@ CREATE TABLE `employetache` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `employetache`
+-- Déchargement des données de la table `employetache`
 --
 
 INSERT INTO `employetache` (`employe_id`, `tache_id`, `dateDebutReelle`, `dateFinReelle`) VALUES
@@ -198,7 +200,7 @@ INSERT INTO `employetache` (`employe_id`, `tache_id`, `dateDebutReelle`, `dateFi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `factures`
+-- Structure de la table `factures`
 --
 
 CREATE TABLE `factures` (
@@ -213,7 +215,7 @@ CREATE TABLE `factures` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `factures`
+-- Déchargement des données de la table `factures`
 --
 
 INSERT INTO `factures` (`id`, `code`, `date_facture`, `date_paiement`, `montant`, `reference`, `statut`, `phase_id`) VALUES
@@ -235,7 +237,7 @@ INSERT INTO `factures` (`id`, `code`, `date_facture`, `date_paiement`, `montant`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `livrables`
+-- Structure de la table `livrables`
 --
 
 CREATE TABLE `livrables` (
@@ -251,7 +253,7 @@ CREATE TABLE `livrables` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `livrables`
+-- Déchargement des données de la table `livrables`
 --
 
 INSERT INTO `livrables` (`id`, `chemin`, `code`, `date_remise`, `description`, `libelle`, `type_fichier`, `valide`, `phase_id`) VALUES
@@ -274,7 +276,7 @@ INSERT INTO `livrables` (`id`, `chemin`, `code`, `date_remise`, `description`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notifications`
+-- Structure de la table `notifications`
 --
 
 CREATE TABLE `notifications` (
@@ -287,7 +289,7 @@ CREATE TABLE `notifications` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `notifications`
+-- Déchargement des données de la table `notifications`
 --
 
 INSERT INTO `notifications` (`id`, `date_creation`, `lue`, `message`, `type`, `employe_id`) VALUES
@@ -301,7 +303,7 @@ INSERT INTO `notifications` (`id`, `date_creation`, `lue`, `message`, `type`, `e
 -- --------------------------------------------------------
 
 --
--- Table structure for table `organismes`
+-- Structure de la table `organismes`
 --
 
 CREATE TABLE `organismes` (
@@ -318,7 +320,7 @@ CREATE TABLE `organismes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `organismes`
+-- Déchargement des données de la table `organismes`
 --
 
 INSERT INTO `organismes` (`id`, `adresse`, `code`, `email_contact`, `nom`, `nom_contact`, `pays`, `secteur_activite`, `site_web`, `telephone`) VALUES
@@ -331,7 +333,7 @@ INSERT INTO `organismes` (`id`, `adresse`, `code`, `email_contact`, `nom`, `nom_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phases`
+-- Structure de la table `phases`
 --
 
 CREATE TABLE `phases` (
@@ -350,17 +352,17 @@ CREATE TABLE `phases` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `phases`
+-- Déchargement des données de la table `phases`
 --
 
 INSERT INTO `phases` (`id`, `code`, `date_debut`, `date_fin`, `description`, `etat_facturation`, `etat_paiement`, `etat_realisation`, `libelle`, `montant`, `pourcentage`, `projet_id`) VALUES
 (1, 'PH001-1', '2024-01-15', '2024-02-28', 'Recueil des besoins, analyse fonctionnelle et rédaction du cahier des charges détaillé.', b'1', b'1', b'1', 'Analyse & Spécifications', 120000, 100, 1),
 (2, 'PH001-2', '2024-03-01', '2024-04-30', 'Conception de l\'architecture technique, modélisation de la base de données et maquettage UI.', b'1', b'1', b'1', 'Conception & Architecture', 150000, 100, 1),
 (3, 'PH001-3', '2024-05-01', '2024-07-31', 'Développement des APIs REST, logique métier, sécurité JWT et intégration base de données.', b'0', b'0', b'0', 'Développement Backend', 250000, 80, 1),
-(4, 'PH001-4', '2024-06-01', '2024-08-31', 'Développement de l\'interface utilisateur responsive avec React et intégration des APIs.', b'0', b'0', b'0', 'Développement Frontend', 200000, 60, 1),
+(4, 'PH001-4', '2024-06-01', '2024-08-31', 'Développement de l\'interface utilisateur responsive avec React et intégration des APIs.', b'1', b'1', b'1', 'Développement Frontend', 200000, 60, 1),
 (5, 'PH001-5', '2024-09-01', '2024-12-31', 'Tests unitaires, intégration, recette utilisateur et déploiement en production.', b'0', b'0', b'0', 'Tests & Déploiement', 130000, 0, 1),
 (6, 'PH002-1', '2024-03-01', '2024-04-15', 'Analyse de l\'existant, étude de faisabilité technique et financière, validation du périmètre.', b'1', b'1', b'1', 'Cadrage & Étude de faisabilité', 200000, 100, 2),
-(7, 'PH002-2', '2024-04-16', '2024-06-30', 'Design des parcours utilisateurs, prototypage interactif et validation avec les équipes médicales.', b'1', b'1', b'1', 'Design UX/UI', 280000, 100, 2),
+(7, 'PH002-2', '2024-04-16', '2024-06-30', 'Design des parcours utilisateurs, prototypage interactif et validation avec les équipes médicales.', b'1', b'0', b'1', 'Design UX/UI', 280000, 100, 2),
 (8, 'PH002-3', '2024-07-01', '2024-10-31', 'Développement du module dossiers médicaux électroniques avec chiffrement des données.', b'0', b'0', b'0', 'Développement Module Dossiers', 650000, 55, 2),
 (9, 'PH002-4', '2024-10-01', '2025-02-28', 'Développement de la plateforme de téléconsultation vidéo et messagerie sécurisée médecin-patient.', b'0', b'0', b'0', 'Module Téléconsultation', 780000, 20, 2),
 (10, 'PH002-5', '2025-03-01', '2025-06-30', 'Intégration avec les SI hospitaliers existants, formation des équipes et mise een production.', b'0', b'0', b'0', 'Intégration & Formation', 490000, 0, 2),
@@ -370,7 +372,7 @@ INSERT INTO `phases` (`id`, `code`, `date_debut`, `date_fin`, `description`, `et
 (14, 'PH003-4', '2024-03-01', '2024-05-31', 'Formation des agents communaux, documentation et remise du projet au client.', b'1', b'1', b'1', 'Formation & Clôture', 220000, 100, 3),
 (15, 'PH004-1', '2024-05-01', '2024-06-30', 'Prospection terrain, cartographie des zones de déploiement et planification logistique.', b'1', b'1', b'1', 'Étude Terrain & Planification', 350000, 100, 4),
 (16, 'PH004-2', '2024-07-01', '2024-09-30', 'Installation de la fibre optique et équipements actifs sur l\'axe Casablanca.', b'0', b'0', b'0', 'Déploiement Casablanca', 720000, 90, 4),
-(17, 'PH004-3', '2024-09-01', '2024-12-31', 'Installation de la fibre optique sur l\'axe Rabat-Salé-Témara.', b'0', b'0', b'0', 'Déploiement Rabat & Salé', 680000, 40, 4),
+(17, 'PH004-3', '2024-09-01', '2024-12-31', 'Installation de la fibre optique sur l\'axe Rabat-Salé-Témara.', b'0', b'0', b'1', 'Déploiement Rabat & Salé', 680000, 40, 4),
 (18, 'PH004-4', '2025-01-01', '2025-03-31', 'Installation sur les axes Fès, Tanger et Marrakech.', b'0', b'0', b'0', 'Déploiement Autres Villes', 1050000, 0, 4),
 (19, 'PH004-5', '2025-02-01', '2025-03-31', 'Tests de performance réseau, optimisation et recette finale avec le client.', b'0', b'0', b'0', 'Tests & Recette', 300000, 0, 4),
 (20, 'PH005-1', '2023-09-01', '2023-10-15', 'Analyse des processus RH existants et définition du périmètre fonctionnel du module.', b'1', b'1', b'1', 'Analyse RH', 120000, 100, 5),
@@ -381,7 +383,7 @@ INSERT INTO `phases` (`id`, `code`, `date_debut`, `date_fin`, `description`, `et
 -- --------------------------------------------------------
 
 --
--- Table structure for table `profils`
+-- Structure de la table `profils`
 --
 
 CREATE TABLE `profils` (
@@ -392,7 +394,7 @@ CREATE TABLE `profils` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `profils`
+-- Déchargement des données de la table `profils`
 --
 
 INSERT INTO `profils` (`id`, `code`, `description`, `libelle`) VALUES
@@ -408,7 +410,7 @@ INSERT INTO `profils` (`id`, `code`, `description`, `libelle`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `projet`
+-- Structure de la table `projet`
 --
 
 CREATE TABLE `projet` (
@@ -420,7 +422,7 @@ CREATE TABLE `projet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `projet`
+-- Déchargement des données de la table `projet`
 --
 
 INSERT INTO `projet` (`id`, `dateDebut`, `dateFin`, `nom`, `Chef_de_projet`) VALUES
@@ -429,7 +431,7 @@ INSERT INTO `projet` (`id`, `dateDebut`, `dateFin`, `nom`, `Chef_de_projet`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `projets`
+-- Structure de la table `projets`
 --
 
 CREATE TABLE `projets` (
@@ -446,7 +448,7 @@ CREATE TABLE `projets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `projets`
+-- Déchargement des données de la table `projets`
 --
 
 INSERT INTO `projets` (`id`, `code`, `date_debut`, `date_fin`, `description`, `montant`, `nom`, `statut`, `chef_projet_id`, `organisme_id`) VALUES
@@ -459,7 +461,7 @@ INSERT INTO `projets` (`id`, `code`, `date_debut`, `date_fin`, `description`, `m
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tache`
+-- Structure de la table `tache`
 --
 
 CREATE TABLE `tache` (
@@ -472,7 +474,7 @@ CREATE TABLE `tache` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tache`
+-- Déchargement des données de la table `tache`
 --
 
 INSERT INTO `tache` (`id`, `dateFin`, `datedebut`, `nom`, `prix`, `projet_id`) VALUES
@@ -481,18 +483,18 @@ INSERT INTO `tache` (`id`, `dateFin`, `datedebut`, `nom`, `prix`, `projet_id`) V
 (3, '2013-03-30', '2013-02-16', 'Développement', 2500, 1);
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `affectations`
+-- Index pour la table `affectations`
 --
 ALTER TABLE `affectations`
   ADD PRIMARY KEY (`employe_id`,`phase_id`),
   ADD KEY `FK633qvx920p85xa35qbiim9h9` (`phase_id`);
 
 --
--- Indexes for table `commentaires`
+-- Index pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
   ADD PRIMARY KEY (`id`),
@@ -501,20 +503,20 @@ ALTER TABLE `commentaires`
   ADD KEY `FKib67fah7mss4ave379ofpf2mr` (`projet_id`);
 
 --
--- Indexes for table `documents_projet`
+-- Index pour la table `documents_projet`
 --
 ALTER TABLE `documents_projet`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK6qii8vuoc12higqtn9gnxc9n3` (`projet_id`);
 
 --
--- Indexes for table `employe`
+-- Index pour la table `employe`
 --
 ALTER TABLE `employe`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `employes`
+-- Index pour la table `employes`
 --
 ALTER TABLE `employes`
   ADD PRIMARY KEY (`id`),
@@ -524,14 +526,14 @@ ALTER TABLE `employes`
   ADD KEY `FKn9elye4e4dird8qoao0s4nvy5` (`profil_id`);
 
 --
--- Indexes for table `employetache`
+-- Index pour la table `employetache`
 --
 ALTER TABLE `employetache`
   ADD PRIMARY KEY (`employe_id`,`tache_id`),
   ADD KEY `FK82gyt40ohsj3n4oc08x5id1d6` (`tache_id`);
 
 --
--- Indexes for table `factures`
+-- Index pour la table `factures`
 --
 ALTER TABLE `factures`
   ADD PRIMARY KEY (`id`),
@@ -539,49 +541,49 @@ ALTER TABLE `factures`
   ADD UNIQUE KEY `UKto5a6fuwju3ony8d6lif3hvet` (`phase_id`);
 
 --
--- Indexes for table `livrables`
+-- Index pour la table `livrables`
 --
 ALTER TABLE `livrables`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FKpp1rhrjelc995xbilvc70c6r4` (`phase_id`);
 
 --
--- Indexes for table `notifications`
+-- Index pour la table `notifications`
 --
 ALTER TABLE `notifications`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK1trswd5cqgj5usjl50d6gcsx7` (`employe_id`);
 
 --
--- Indexes for table `organismes`
+-- Index pour la table `organismes`
 --
 ALTER TABLE `organismes`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `UKlvvnoayhy67vbj1sdsjwcwjng` (`code`);
 
 --
--- Indexes for table `phases`
+-- Index pour la table `phases`
 --
 ALTER TABLE `phases`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FKcjf8ya8drmry0i393s7pi9mf5` (`projet_id`);
 
 --
--- Indexes for table `profils`
+-- Index pour la table `profils`
 --
 ALTER TABLE `profils`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `UKsohue06gag2e86h9scarbtgpg` (`code`);
 
 --
--- Indexes for table `projet`
+-- Index pour la table `projet`
 --
 ALTER TABLE `projet`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK2ecr47cd2qs5ghq5yawcnrocf` (`Chef_de_projet`);
 
 --
--- Indexes for table `projets`
+-- Index pour la table `projets`
 --
 ALTER TABLE `projets`
   ADD PRIMARY KEY (`id`),
@@ -590,107 +592,107 @@ ALTER TABLE `projets`
   ADD KEY `FKbfaxpg242aqe07niio3xf9y69` (`organisme_id`);
 
 --
--- Indexes for table `tache`
+-- Index pour la table `tache`
 --
 ALTER TABLE `tache`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FKcb0x7p6kcs8h6ijwif67qdj9b` (`projet_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `commentaires`
+-- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `documents_projet`
+-- AUTO_INCREMENT pour la table `documents_projet`
 --
 ALTER TABLE `documents_projet`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `employe`
+-- AUTO_INCREMENT pour la table `employe`
 --
 ALTER TABLE `employe`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `employes`
+-- AUTO_INCREMENT pour la table `employes`
 --
 ALTER TABLE `employes`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `factures`
+-- AUTO_INCREMENT pour la table `factures`
 --
 ALTER TABLE `factures`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `livrables`
+-- AUTO_INCREMENT pour la table `livrables`
 --
 ALTER TABLE `livrables`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `notifications`
+-- AUTO_INCREMENT pour la table `notifications`
 --
 ALTER TABLE `notifications`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `organismes`
+-- AUTO_INCREMENT pour la table `organismes`
 --
 ALTER TABLE `organismes`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `phases`
+-- AUTO_INCREMENT pour la table `phases`
 --
 ALTER TABLE `phases`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `profils`
+-- AUTO_INCREMENT pour la table `profils`
 --
 ALTER TABLE `profils`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `projet`
+-- AUTO_INCREMENT pour la table `projet`
 --
 ALTER TABLE `projet`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `projets`
+-- AUTO_INCREMENT pour la table `projets`
 --
 ALTER TABLE `projets`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tache`
+-- AUTO_INCREMENT pour la table `tache`
 --
 ALTER TABLE `tache`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `affectations`
+-- Contraintes pour la table `affectations`
 --
 ALTER TABLE `affectations`
   ADD CONSTRAINT `FK633qvx920p85xa35qbiim9h9` FOREIGN KEY (`phase_id`) REFERENCES `phases` (`id`),
   ADD CONSTRAINT `FK9pqluywvd0vi297w64ww0xqrc` FOREIGN KEY (`employe_id`) REFERENCES `employes` (`id`);
 
 --
--- Constraints for table `commentaires`
+-- Contraintes pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
   ADD CONSTRAINT `FK2jqtx8e1nrsg0l4t2yenmgnj7` FOREIGN KEY (`auteur_id`) REFERENCES `employes` (`id`),
@@ -698,63 +700,63 @@ ALTER TABLE `commentaires`
   ADD CONSTRAINT `FKib67fah7mss4ave379ofpf2mr` FOREIGN KEY (`projet_id`) REFERENCES `projets` (`id`);
 
 --
--- Constraints for table `documents_projet`
+-- Contraintes pour la table `documents_projet`
 --
 ALTER TABLE `documents_projet`
   ADD CONSTRAINT `FK6qii8vuoc12higqtn9gnxc9n3` FOREIGN KEY (`projet_id`) REFERENCES `projets` (`id`);
 
 --
--- Constraints for table `employes`
+-- Contraintes pour la table `employes`
 --
 ALTER TABLE `employes`
   ADD CONSTRAINT `FKn9elye4e4dird8qoao0s4nvy5` FOREIGN KEY (`profil_id`) REFERENCES `profils` (`id`);
 
 --
--- Constraints for table `employetache`
+-- Contraintes pour la table `employetache`
 --
 ALTER TABLE `employetache`
   ADD CONSTRAINT `FK82gyt40ohsj3n4oc08x5id1d6` FOREIGN KEY (`tache_id`) REFERENCES `tache` (`id`),
   ADD CONSTRAINT `FKcm4rkn43oh0spc9dnt7m6gdmt` FOREIGN KEY (`employe_id`) REFERENCES `employe` (`id`);
 
 --
--- Constraints for table `factures`
+-- Contraintes pour la table `factures`
 --
 ALTER TABLE `factures`
   ADD CONSTRAINT `FKlfyhwqdq02wwgdieae1dv13d1` FOREIGN KEY (`phase_id`) REFERENCES `phases` (`id`);
 
 --
--- Constraints for table `livrables`
+-- Contraintes pour la table `livrables`
 --
 ALTER TABLE `livrables`
   ADD CONSTRAINT `FKpp1rhrjelc995xbilvc70c6r4` FOREIGN KEY (`phase_id`) REFERENCES `phases` (`id`);
 
 --
--- Constraints for table `notifications`
+-- Contraintes pour la table `notifications`
 --
 ALTER TABLE `notifications`
   ADD CONSTRAINT `FK1trswd5cqgj5usjl50d6gcsx7` FOREIGN KEY (`employe_id`) REFERENCES `employes` (`id`);
 
 --
--- Constraints for table `phases`
+-- Contraintes pour la table `phases`
 --
 ALTER TABLE `phases`
   ADD CONSTRAINT `FKcjf8ya8drmry0i393s7pi9mf5` FOREIGN KEY (`projet_id`) REFERENCES `projets` (`id`);
 
 --
--- Constraints for table `projet`
+-- Contraintes pour la table `projet`
 --
 ALTER TABLE `projet`
   ADD CONSTRAINT `FK2ecr47cd2qs5ghq5yawcnrocf` FOREIGN KEY (`Chef_de_projet`) REFERENCES `employe` (`id`);
 
 --
--- Constraints for table `projets`
+-- Contraintes pour la table `projets`
 --
 ALTER TABLE `projets`
   ADD CONSTRAINT `FKbfaxpg242aqe07niio3xf9y69` FOREIGN KEY (`organisme_id`) REFERENCES `organismes` (`id`),
   ADD CONSTRAINT `FKmk1vi6j7k56mvcg0o1k1mhci7` FOREIGN KEY (`chef_projet_id`) REFERENCES `employes` (`id`);
 
 --
--- Constraints for table `tache`
+-- Contraintes pour la table `tache`
 --
 ALTER TABLE `tache`
   ADD CONSTRAINT `FKcb0x7p6kcs8h6ijwif67qdj9b` FOREIGN KEY (`projet_id`) REFERENCES `projet` (`id`);

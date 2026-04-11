@@ -78,39 +78,14 @@ L'application propose :
 
 <img width="1200" height="900" alt="architecture_projectflow_clean" src="https://github.com/user-attachments/assets/a89c0c56-1efa-477b-b0c5-f8c777ac591b" />
 
+### Le backend + docker files
 
+<img width="807" height="902" alt="image" src="https://github.com/user-attachments/assets/7a28d3d6-6712-4449-9d9a-f98b9e261d05" />
 
-```
-ProjetFlow/
-├── src/                                  # Backend Spring Boot
-│   └── main/
-│       ├── java/ma/fstg/gestionprojets/
-│       │   ├── config/                   # Configuration (CORS, Swagger, DataInitializer)
-│       │   ├── controllers/              # Contrôleurs REST
-│       │   ├── entities/                 # Entités JPA
-│       │   ├── repositories/             # Interfaces Spring Data
-│       │   ├── services/                 # Logique métier
-│       │   ├── mappers/                  # DTO ↔ Entity
-│       │   ├── security/                 # JWT, SecurityConfig, UserDetails
-│       │   └── exceptions/               # Exceptions métier personnalisées
-│       └── resources/
-│           └── application.properties
-│
-├── gestion-projets-frontend/             # Frontend React
-│   └── src/
-│       ├── pages/                        # Pages (Dashboard, Projets, Phases…)
-│       ├── layouts/                      # Sidebar, Topbar, Layout
-│       ├── components/                   # Composants réutilisables
-│       ├── services/                     # Appels API (un fichier par module)
-│       ├── context/                      # AuthContext (état global)
-│       ├── guards/                       # PrivateRoute, protection des routes
-│       ├── types/                        # Types TypeScript
-│       └── utils/                        # axiosConfig avec interceptors
-│
-├── Dockerfile                            # Image Docker backend
-├── docker-compose.yml                    # Orchestration 3 services (db, backend, frontend)
-└── README.md
-```
+### Le frontend
+
+<img width="811" height="857" alt="image" src="https://github.com/user-attachments/assets/407fa163-d4dd-4392-9b8f-91069e748ab5" />
+
 
 ---
 
@@ -226,24 +201,16 @@ Au premier démarrage du backend, le `DataInitializer` crée automatiquement :
 - Tous les profils (ADMINISTRATEUR, DIRECTEUR, CHEF_PROJET, COMPTABLE, SECRETAIRE, INGENIEUR, TECHNICIEN, EMPLOYE)
 - Le compte administrateur par défaut
 
-### Initialisation manuelle (sans Maven)
+### Les tableaux cree dans la base
 
 Si vous lancez l'application depuis votre IDE (IntelliJ, Eclipse) :
 
-1. Exécuter `init_database.sql` dans MySQL pour créer la structure
-2. Exécuter `donnees_test.sql` pour insérer des données de démonstration
-3. Lancer `GestionprojetsApplication.java` via le bouton Run de votre IDE
+<img width="1170" height="539" alt="image" src="https://github.com/user-attachments/assets/249d0469-a7d6-47d7-b8a2-36a4b650c377" />
 
-### Schéma des entités principales
 
-```
-profils ──< employes >──────< affectations >──── phases >──── livrables
-                                                    │              │
-organismes ──< projets >──< phases                  └── factures
-                  │
-                  └──< documents_projet
-                  └──< commentaires
-```
+### Schéma 
+
+<img width="1407" height="862" alt="image" src="https://github.com/user-attachments/assets/c2977df4-c4fb-4bc4-8427-f0a3be0ce0b4" />
 
 ---
 
@@ -252,15 +219,15 @@ organismes ──< projets >──< phases                  └── factures
 | Login | Mot de passe | Rôle |
 |-------|-------------|------|
 | `admin` | `admin123` | Administrateur — accès complet |
-| `melfassi` | `admin123` | Directeur |
-| `sbenhaddou` | `admin123` | Secrétaire |
-| `rouali` | `admin123` | Chef de Projet |
-| `lamrani` | `admin123` | Chef de Projet |
-| `hcherkaoui` | `admin123` | Comptable |
+| `melfassi` | `fassi123` | Directeur |
+| `sbenhaddou` | `haddou123` | Secrétaire |
+| `rouali` | `rachid123` | Chef de Projet |
+| `lamrani` | `lamrani123` | Chef de Projet |
+| `hcherkaoui` | `cherk123` | Comptable |
 | `ibenali` | `admin123` | Ingénieur |
-| `ytahiri` | `admin123` | Ingénieur |
-| `amoukhliss` | `admin123` | Technicien |
-| `kziani` | `admin123` | Employé |
+| `ytahiri` | `tahiri123` | Ingénieur |
+| `amoukhliss` | `amoukh123` | Technicien |
+| `kziani` | `ziani123` | Employé |
 
 ---
 
@@ -376,7 +343,12 @@ Le projet suit le plan de travail académique en **14 phases** :
 
 
 
-https://github.com/user-attachments/assets/11ae298c-2f0c-4610-b2c2-b284e9feec91
+
+
+
+https://github.com/user-attachments/assets/73a4496a-04b2-4686-9914-d61b81b62815
+
+
 
 
 
