@@ -343,7 +343,12 @@ Le projet suit le plan de travail académique en **14 phases** :
 
 
 
-https://github.com/user-attachments/assets/11ae298c-2f0c-4610-b2c2-b284e9feec91
+
+
+
+https://github.com/user-attachments/assets/73a4496a-04b2-4686-9914-d61b81b62815
+
+
 
 
 
