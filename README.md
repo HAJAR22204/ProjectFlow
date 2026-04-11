@@ -78,39 +78,14 @@ L'application propose :
 
 <img width="1200" height="900" alt="architecture_projectflow_clean" src="https://github.com/user-attachments/assets/a89c0c56-1efa-477b-b0c5-f8c777ac591b" />
 
+### Le backend + docker files
 
+<img width="807" height="902" alt="image" src="https://github.com/user-attachments/assets/7a28d3d6-6712-4449-9d9a-f98b9e261d05" />
 
-```
-ProjetFlow/
-├── src/                                  # Backend Spring Boot
-│   └── main/
-│       ├── java/ma/fstg/gestionprojets/
-│       │   ├── config/                   # Configuration (CORS, Swagger, DataInitializer)
-│       │   ├── controllers/              # Contrôleurs REST
-│       │   ├── entities/                 # Entités JPA
-│       │   ├── repositories/             # Interfaces Spring Data
-│       │   ├── services/                 # Logique métier
-│       │   ├── mappers/                  # DTO ↔ Entity
-│       │   ├── security/                 # JWT, SecurityConfig, UserDetails
-│       │   └── exceptions/               # Exceptions métier personnalisées
-│       └── resources/
-│           └── application.properties
-│
-├── gestion-projets-frontend/             # Frontend React
-│   └── src/
-│       ├── pages/                        # Pages (Dashboard, Projets, Phases…)
-│       ├── layouts/                      # Sidebar, Topbar, Layout
-│       ├── components/                   # Composants réutilisables
-│       ├── services/                     # Appels API (un fichier par module)
-│       ├── context/                      # AuthContext (état global)
-│       ├── guards/                       # PrivateRoute, protection des routes
-│       ├── types/                        # Types TypeScript
-│       └── utils/                        # axiosConfig avec interceptors
-│
-├── Dockerfile                            # Image Docker backend
-├── docker-compose.yml                    # Orchestration 3 services (db, backend, frontend)
-└── README.md
-```
+### Le frontend
+
+<img width="811" height="857" alt="image" src="https://github.com/user-attachments/assets/407fa163-d4dd-4392-9b8f-91069e748ab5" />
+
 
 ---
 
